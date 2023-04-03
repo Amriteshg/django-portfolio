@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="home" class="banner-area section-padding">
+    <div class="bg-overlay black"></div>
+    <div class="containter">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="welcome-text">
+                    <div class="name-area wow fadeInDown" data-wow-delay="0.2s">I'll help you build and accomplish your
+                        goals.</div>
+                    <h1 class="wow fadeInDown" data-wow-delay="0.4s"> <span class="auto-type"></span> with ME.</h1>
+                    <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Learn more</a>
+                    <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# About section#}
+
+<div id="about" class="about-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-left">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="line"></div>
+                    <h4>{{ about.short_description }}</h4>
+                    <p>{{ about.description }}</p>
+                    <a href="{{about.cv.url}}" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-5 visible-sm visible-lg wow fadeInDown" data-wow-delay="0.6s">
+                <div class="profile">
+                    <img src="{{ about.image.url }}" alt="Profile image" class="glow">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Skill Section#}
+<div id="skills" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Learning Skills</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for skill in skills %}
+            <div class="col-md-4 col-sm-4">
+                <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                    <h2>{{ skill.name }}</h2>
+                    <p>{{ skill.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Coding Skills</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for cskill in cskills %}
+            <div class="field">
+                <div class="proimg">
+                    <img src="{{ cskill.image.url }}" alt="Profile Picture">
+                </div>
+                <div class="progress-wrapper">
+                    <div class="field-name">{{ cskill.name }}</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: {{ cskill.score }}%;">{{ cskill.score }}%</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Soft Skills</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for sskill in sskills %}
+            <div class="col-sm-3" style="padding: 10px;">
+                
+                <div class="picture-card">
+                    <img src="{{ sskill.image.url }}" alt="..">
+                    <h3>{{ sskill.name }}</h3>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{# Recent Works Section#}
+<div id="portfolio" class="portfolio-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header">
+                    <h2>My Recent Projects</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for work in works %}
+            <div class="col-sm-3"  style="padding: 15px;">
+                <div class="card" style="width: 23rem;">
+                    <img src="{{ work.image.url }}" class="card-img-top" alt="..." height="160px" width="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ work.title }}</h5>
+                        <!-- <p class="card-text">{{ work.description }}</p> -->
+                        <a href="#" class="btn btn-primary">Visit</a>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="card-title">Uploaded {{ work.upload_time_ago }}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{# Contact section#}
+<div id="contact" class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-center">
+                    <h2>Contact Me</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="border: 1px solid #f40606; border-radius: 20px; padding: 20px;">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 box-contact-form">
+                <form id="contact-form" action="{% url 'contact' %}" method="POST">
+                    {% csrf_token %}
+                    <!-- {{form}} -->
+                    <div class="messages"></div>
+                    <div class="controls">
+                        <div class="mb-3">
+                            <div class="form-group wow fadeInDown" data-wow-delay="0.2s">
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Name *"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-group wow fadeInDown" data-wow-delay="0.4s">
+                                <input id="form_email" type="email" name="email" class="form-control"
+                                    placeholder="Email *" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
+                                <input id="form_phone" type="number" name="phone" class="form-control"
+                                    placeholder="Phone Number *" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-floating wow fadeInDown" data-wow-delay="0.2s">
+                                <label for="options">Select your Requirement:</label>
+                                <select class="form-select" id="options" name="options"
+                                    aria-label="Floating label select example">
+                                    <option value="Questions" selected="selected">Questions</option>
+                                    <option value="Hire Me">Hire Me</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
+                                <textarea id="form_concern" name="concern" class="form-control"
+                                    placeholder="Your Message *" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-send" value="">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

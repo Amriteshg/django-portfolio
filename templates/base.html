@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ home.webicon.url }}">
+    <title>Portfolio</title>
+    {% include 'includes/stylesheets.html' %}
+</head>
+
+<body id="body" class="light-mode">
+
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="/"> DEV<span>.</span> </a>
+                <a class="navbar-brand page-scroll" style="padding: 0rem 1rem;" href="/"><img
+                        src="{{ home.webicon.url }}" alt="..."></a>
+                <div class="btn-group btn-group-toggle mb-3">
+                    <button id="light" type="button" class="active btn pr-4 pl-4 border-0" onclick="toggleLight()">Light</button>
+                    <button id="dark" type="button" class="btn pr-4 pl-4 border-0" onclick="toggleDark()">Dark</button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
+                    <li><a class="smooth-menu" href="#about">About</a></li>
+                    <li><a class="smooth-menu" href="#skills">Skills</a></li>
+                    <li><a class="smooth-menu" href="#portfolio">Portfolio</a></li>
+                    <li><a class="smooth-menu" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+    <br>
+    <div class="footer-area">
+        <div class="container">
+            <div class="footerCol">
+                <div class="container">
+                    <ul class="socialCol">
+                        <li><a href="javascript:void(0)"><img src="{{ home.fb.url }}" alt="..."></a></li>
+                        <li><a href="javascript:void(0)"><img src="{{ home.insta.url }}" alt="..."></a></li>
+                        <li><a href="javascript:void(0)"><img src="{{ home.twitter.url }}" alt="..."></a></li>
+                        <li><a href="javascript:void(0)"><img src="{{ home.linkedin.url }}" alt="..."></a></li>
+                    </ul>
+                    <div class="copyrightCol">
+                        <p>Copyright ©{% now 'Y' %} All rights reserved. Designed by Amritesh Ghosh </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'includes/scripts.html' %}
+</body>
+
+</html>

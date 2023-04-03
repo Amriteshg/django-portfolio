@@ -1,0 +1,60 @@
+{% load static %}
+
+<!--Text Typing Animation-->
+<script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('.auto-type', {
+        strings: ['Create Innovative PROJECTS', 'Discuss Project Solutions', 'Research Ideas'],
+        typeSpeed: 60,
+        backSpeed: 50,
+        loop: true
+    });
+</script>
+
+
+<script>
+    function toggleLight() {
+        var body = document.getElementById("body");
+        var currentClass = body.className;
+        body.className = currentClass == "dark-mode" ? "light-mode" : "light-mode";
+    }
+
+    function toggleDark() {
+        var body = document.getElementById("body");
+        var currentClass = body.className;
+        body.className = currentClass == "light-mode" ? "dark-mode" : "dark-mode";
+    }
+
+    $(".btn-group > .btn").click(function () {
+        $(".btn-group > .btn").removeClass("active");
+        $(this).addClass("active");
+    });
+</script>
+
+
+<!--Latest version JQuery-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+<!--Bootstrap js-->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!--Bootstrap js-->
+<script src="{% static 'js/wow.min.js' %}"></script>
+
+<!--Theme js-->
+<script src="{% static 'js/main.js' %}"></script>
+
+<!--easing js-->
+<!-- <script src="{% static 'js/jquery.easing.min.js' %}"></script> -->
+
+<!--mixitup js-->
+<!-- <script src="{% static 'js/jquery.magnific-popup.js' %}"></script> -->
+
+<!--Owl Carousel js-->
+<!-- <script src="{% static 'js/owl.carousel.js' %}"></script> -->
+
+<!--Validator js-->
+<!-- <script src="{% static 'js/validator.js' %}"></script> -->
+
+<!--Contact js-->
+<!-- <script src="{% static 'js/contact.js' %}"></script> -->
