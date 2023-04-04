@@ -1,19 +1,21 @@
-/*
-Table of content
 
-1. Default css
-2. Preloader css
-3. Navbar css
-4. Banner area css
-5. About area css
-6. Services area css
-7. Portfolio starts css
-8. Testimonial area css
-9. Invitation area css
-10. Contact area css
-11. Footer area css
+/* Define variables for light and dark mode */
+:root {
+    --text-color-light: #333333;
 
-*/
+    /* section-header h2 */
+    --text-color-dark-SH: #f6d90de3;
+    /* h1, h2, h3, h4 */
+    --text-color-dark-H: #ffdc24bf;
+    /* h5 */
+    --text-color-dark-H5: #ffdc24bf;
+    /* h6 */
+    --text-color-dark-H6: #25ceb2e6;
+    /* about-left h2 */
+    --text-color-dark-abH2: #f6d90de3;
+    /* field-name */
+    --text-color-dark-fn: #fcf8e3;
+}
 
 /* .card {
     font-weight: bold;
@@ -51,9 +53,8 @@ Table of content
 }
 
 .glow {
-    width: 400;
+    width: 390;
     height: 420;
-    margin-left: 100px;
     border-radius: 10%;
     color: #111;
     background: rgb(200, 6, 24);
@@ -62,7 +63,7 @@ Table of content
 
 /* Progress bar styles */
 .progress {
-    width: 350px;
+    width: 100%;
     /* Change the width value as desired */
     height: 20px;
     background-color: #f2f2f2;
@@ -84,7 +85,8 @@ Table of content
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: -5px;
 }
 
 .proimg img {
@@ -94,13 +96,7 @@ Table of content
     margin-right: 10px;
 }
 
-.fields {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 20px;
-}
+
 
 .field {
     display: flex;
@@ -110,10 +106,11 @@ Table of content
     margin: 10px 0;
 }
 
-.field-name {
+/* .field-name {
     font-weight: bold;
     margin-right: 10px;
-}
+    color: red;
+} */
 
 /* Media queries */
 @media only screen and (max-width: 768px) {
@@ -152,6 +149,13 @@ Table of content
     }
 }
 
+/* .fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+} */
 
 /* Container styles */
 .picture-container {
@@ -185,7 +189,7 @@ Table of content
 
 /* Dark Mode CSS  */
 .dark-class {
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: rgb(12, 10, 10);
     width: 100%;
     height: 100%;
@@ -208,8 +212,65 @@ Table of content
 }
 
 .light-mode .btn {
+    background: white;
     color: black;
 }
+
+.light-mode .btn:hover,
+.light-mode .btn:active {
+    background-color: #bbb;
+}
+
+.light-mode .section-header h2 {
+    font-size: 27px;
+    line-height: 37px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+    text-transform: uppercase;
+}
+
+.light-mode h5 {
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+    text-transform: uppercase;
+}
+
+.light-mode h6 {
+    font-weight: 700;
+    margin-top: 5px;
+    color: var(--text-color-light);
+    text-transform: uppercase;
+}
+
+.light-mode .about-left h2 {
+    font-size: 27px;
+    line-height: 37px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+.light-mode .field-name {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--text-color-light);
+}
+
 
 .dark-mode {
     background-color: #111;
@@ -225,6 +286,61 @@ Table of content
 .dark-mode .btn {
     background: #444;
     color: #fff;
+}
+
+.dark-mode .btn:hover,
+.dark-mode .btn:active {
+    background-color: #333;
+}
+
+.dark-mode .section-header h2 {
+    font-size: 27px;
+    line-height: 37px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+    color: var(--text-color-dark-SH);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: var(--text-color-dark-H);
+    text-transform: uppercase;
+}
+
+.dark-mode h5 {
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: var(--text-color-dark-H5);
+    text-transform: uppercase;
+}
+
+.dark-mode h6 {
+    font-weight: 700;
+    margin-top: 5px;
+    color: var(--text-color-dark-H6);
+    text-transform: uppercase;
+}
+
+.dark-mode .about-left h2 {
+    font-size: 27px;
+    line-height: 37px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+    color: var(--text-color-dark-abH2);
+}
+
+.dark-mode .field-name {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--text-color-dark-fn);
 }
 
 
@@ -300,7 +416,7 @@ li {
     padding: 0;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4 {
@@ -309,11 +425,11 @@ h4 {
     margin-bottom: 10px;
     color: #333333;
     text-transform: uppercase;
-}
+} */
 
-h5 {
+/* h5 {
     font-weight: 700;
-    margin-top: 5;
+    margin-top: 5px;
     margin-bottom: 10px;
     color: #333333;
     text-transform: uppercase;
@@ -321,11 +437,11 @@ h5 {
 
 h6 {
     font-weight: 700;
-    margin-top: 5;
+    margin-top: 5px;
     margin-bottom: 10px;
     color: #333333;
     text-transform: uppercase;
-}
+} */
 
 .section-padding {
     padding: 90px 0;
@@ -351,14 +467,14 @@ h6 {
     text-align: center;
 }
 
-.section-header h2 {
+/* .section-header h2 {
     font-size: 27px;
     line-height: 37px;
     margin-bottom: 20px;
     padding-top: 10px;
     font-weight: 600;
     color: #333333;
-}
+} */
 
 .section-header h2::before {
     position: absolute;
@@ -600,14 +716,14 @@ h6 {
     width: 200px;
 }
 
-.about-left h2 {
+/* .about-left h2 {
     font-size: 27px;
     line-height: 37px;
     margin-bottom: 20px;
     padding-top: 10px;
     font-weight: 600;
     color: #333333;
-}
+} */
 
 .about-left h4 {
     text-transform: capitalize;

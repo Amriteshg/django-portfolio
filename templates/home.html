@@ -8,8 +8,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="welcome-text">
-                    <div class="name-area wow fadeInDown" data-wow-delay="0.2s">I'll help you build and accomplish your
-                        goals.</div>
+                    <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Hello Folks, Welcome to my Website.
+                    </div>
                     <h1 class="wow fadeInDown" data-wow-delay="0.4s"> <span class="auto-type"></span> with ME.</h1>
                     <a href="#about" class="my-btn-1 wow fadeInDown" data-wow-delay="0.6s">Learn more</a>
                     <a href="#contact" class="my-btn-2 wow fadeInDown" data-wow-delay="0.8s">Contact Me</a>
@@ -24,7 +24,7 @@
 <div id="about" class="about-area section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-sm-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="col-sm-7 col-sn-8 col-xs-12 wow fadeInLeft" data-wow-delay="0.2s" style="margin-bottom: 20px;">
                 <div class="about-left">
                     <h2 class="section-title">About Me</h2>
                     <div class="line"></div>
@@ -33,7 +33,7 @@
                     <a href="{{about.cv.url}}" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
                 </div>
             </div>
-            <div class="col-sm-5 visible-sm visible-lg wow fadeInDown" data-wow-delay="0.6s">
+            <div class="col-sm-5 col-xs-12 wow fadeInDown" data-wow-delay="0.6s">
                 <div class="profile">
                     <img src="{{ about.image.url }}" alt="Profile image" class="glow">
                 </div>
@@ -71,17 +71,24 @@
         </div>
         <div class="row">
             {% for cskill in cskills %}
-            <div class="field">
-                <div class="proimg">
-                    <img src="{{ cskill.image.url }}" alt="Profile Picture">
-                </div>
-                <div class="progress-wrapper">
-                    <div class="field-name">{{ cskill.name }}</div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: {{ cskill.score }}%;">{{ cskill.score }}%</div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-sm-3" style="padding: 10px;">
+                        <div class="proimg">
+                            <img src="{{ cskill.image.url }}" alt="Profile Picture">
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="progress-wrapper">
+                            <div class="field-name">{{ cskill.name }}</div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: {{ cskill.score }}%;">{{ cskill.score }}%</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             {% endfor %}
         </div>
         <div class="row">
@@ -94,12 +101,12 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for sskill in sskills %}
             <div class="col-sm-3" style="padding: 10px;">
-                
+
                 <div class="picture-card">
                     <img src="{{ sskill.image.url }}" alt="..">
-                    <h3>{{ sskill.name }}</h3>
+                    <h3 style="margin-top: 20px;">{{ sskill.name }}</h3>
                 </div>
-                
+
             </div>
             {% endfor %}
         </div>
@@ -118,7 +125,7 @@
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for work in works %}
-            <div class="col-sm-3"  style="padding: 15px;">
+            <div class="col-sm-3" style="padding: 15px;">
                 <div class="card" style="width: 23rem;">
                     <img src="{{ work.image.url }}" class="card-img-top" alt="..." height="160px" width="200px">
                     <div class="card-body">
